@@ -1,0 +1,54 @@
+<div *ngIf="book">
+  <h2>{{ book.title | uppercase }} Details</h2>
+  <div>
+    <span>id: </span>{{book.id}}</div>
+  <div>
+    <span>Author: </span>{{book.author}}
+  </div>
+  <div>
+    <span>Date: </span>{{book.date}}
+  </div>
+  <div>
+    <label>Title:
+      <input [(ngModel)]="book.title" placeholder="Title" />
+    </label>
+    <button (click)="save()" type="button" class="btn btn-success"><fa name="check"></fa></button>
+    <button type="button" class="btn btn-primary"><fa name="undo"></fa></button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h2>{{ book.title | uppercase }} Details</h2>
+        <div>
+          <span>id: </span>{{book.id}}</div>
+        <div>
+          <span>Author: </span>{{book.author}}
+        </div>
+        <div>
+          <span>Date: </span>{{book.date}}
+        </div>
+        <label>Title:
+          <input [(ngModel)]="book.title" placeholder="Title" />
+        </label>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          <fa name="times"></fa>
+        </button>
+        <button (click)="save()" type="button" class="btn btn-primary">
+          <fa name="check"></fa>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
