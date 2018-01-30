@@ -51,6 +51,11 @@ export class BookService {
       catchError(this.handleError<any>('updateBook'))
     );
   }
+  addBook (book: Book): Observable<Book> {
+    return this.http.post<Book>(this.booksUrl, book, httpOptions).pipe(
+      catchError(this.handleError<Book>('addBook'))
+    );
+  }
   deleteBook (book: Book | number): Observable<Book> {
     const id = typeof book === 'number' ? book : book.id;
     const url = `${this.booksUrl}/${id}`;
