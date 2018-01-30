@@ -20,7 +20,12 @@ export class BooksComponent implements OnInit {
     this.getBooks();
   }
   delete(book: Book): void {
-    this.books = this.books.filter(b => b !== book);
-    this.bookService.deleteBook(book).subscribe();
+    let response = prompt('Are you sure you want to delete? Y/N');
+    if(response === 'n' || response === 'N') { 
+      return; 
+    }else{
+      this.books = this.books.filter(b => b !== book);
+      this.bookService.deleteBook(book).subscribe();
+    }
   }
 }

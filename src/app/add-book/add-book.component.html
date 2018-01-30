@@ -1,10 +1,18 @@
 <div>
-    <label>Book title:
-      <input #bookTitle />
+    <label>Book Author:
+      <input #bookAuthor required/>
     </label>
-    <!-- (click) passes input value to add() and then clears the input -->
-    <button (click)="add(bookTitle.value); bookTitle.value=''">
-      add
+    <label>Publish Date:
+      <input #publishDate required/>
+    </label>
+    <label>Book Title:
+      <input #bookTitle required/>
+    </label>
+    <label>Book Image:
+      <input #bookImage required/>
+    </label>
+    <button (click)="add(bookAuthor.value, publishDate.value, bookTitle.value, bookImage.value); bookAuthor.value=''; publishDate.value=''; bookTitle.value=''; bookImage.value=''" class="btn btn-success">
+      <fa name="plus"></fa>
     </button>
     <button routerLink="/books" type="button" class="btn btn-primary"><fa name="undo"></fa></button>
 </div>

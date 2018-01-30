@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../book';
 import { BookService }  from '../book.service';
-import { Location } from '@angular/common';
-// import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { BooksComponent } from '../books/books.component'
+// import { BooksComponent } from '../books/books.component'
 
 @Component({
   selector: 'app-add-book',
@@ -11,24 +9,20 @@ import { BooksComponent } from '../books/books.component'
   styleUrls: ['./add-book.component.css']
 })
 export class AddBookComponent implements OnInit {
-  // books = BooksComponent
-  books: Book[] = [];
+  books: Book[];
 
   constructor(
-    // private books: BooksComponent[],
-    private bookService: BookService,
-    private location: Location
+    private bookService: BookService  
   ) { }
 
   ngOnInit() {
   }
-  goBack(): void {
-    this.location.back();
-  }
-  add(title: string): void {
+  add(author: string,date: string, title: string, image: string): void {
+    author = author.trim();
     title = title.trim();
-    if (!title) { return; }
-    this.bookService.addBook({ title } as Book)
+    image = image.trim();
+    if (!author || !date || !title || !image) { return; }
+    this.bookService.addBook({title} as Book)
       .subscribe(book => {
         this.books.push(book);
       });
