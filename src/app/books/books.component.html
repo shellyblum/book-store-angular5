@@ -6,42 +6,23 @@
   </div> -->
   <ul class="books">
     <div class="row">
-    <li *ngFor="let book of books" (click)="onSelect(book)" [class.selected]="book === selectedBook">
+    <li *ngFor="let book of books" >
       <div class="col-md-4">
-        <div class="content">
-          <img class="card-img-top" src='{{book.src}}' alt="Card image">
-          <h5 class="card-title">{{ book.title }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{book.author}}</h6>
-          <h6 class="card-subtitle mb-2 text-muted">{{ book.date }}</h6>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"><fa name="pencil"></fa></button>
-          <button (click)="delete(book)" type="button" class="btn btn-danger" title="delete book"><fa name="trash-o"></fa></button>
-        </div>
+        <a routerLink="/detail/{{book.id}}">
+          <div class="content">
+            <img class="card-img-top" src='{{book.src}}' alt="Card image">
+            <h5 class="card-title">{{ book.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{book.author}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">{{ book.date }}</h6>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"><fa name="pencil"></fa></button>
+            <button (click)="delete(book)" type="button" class="btn btn-danger" title="delete book"><fa name="trash-o"></fa></button>
+          </div>
+        </a>
       </div>
     </li>
     </div>
   </ul>
 </div>
-<app-book-detail [book]="selectedBook"></app-book-detail>
-<!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
+<!-- <app-book-detail [book]="selectedBook"></app-book-detail> -->
 
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">
-            <fa name="times"></fa>
-          </button>
-          <button (click)="save()" type="button" class="btn btn-primary">
-            <fa name="check"></fa>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+

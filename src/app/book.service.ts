@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Book } from './book';
+import { InMemoryDataService }  from './in-memory-data.service';
 import { Observable } from 'rxjs/Observable';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 @Injectable()
 export class BookService {
+  books: Book[] = [];
 
   constructor( private http: HttpClient ) { }
   private booksUrl = 'api/books';
@@ -39,6 +44,11 @@ export class BookService {
     const url = `${this.booksUrl}/${id}`;
     return this.http.get<Book>(url).pipe(
       catchError(this.handleError<Book>(`getBook id=${id}`))
+    );
+  }
+  updateBook (book: Book): Observable<any> {
+    return this.http.put(this.booksUrl, book, httpOptions).pipe(
+      catchError(this.handleError<any>('updateBook'))
     );
   }
   deleteBook (book: Book | number): Observable<Book> {
