@@ -8,7 +8,7 @@ import {
    debounceTime, distinctUntilChanged, switchMap
  } from 'rxjs/operators';
  
-import { Book } from '../book';
+import { Book } from '../models/Book';
 import { BookService } from '../book.service';
  
 @Component({

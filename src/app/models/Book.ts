@@ -3,5 +3,5 @@ export class Book {
     author: string;
     date: string;
     title: string;
-    src: string
-  }
+    image: string;
+}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from '../book';
+import { Book } from '../models/Book';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { BookService }  from '../book.service';
-// import { BooksComponent } from '../books/books.component'
 
 @Component({
   selector: 'app-add-book',
@@ -9,22 +9,31 @@ import { BookService }  from '../book.service';
   styleUrls: ['./add-book.component.css']
 })
 export class AddBookComponent implements OnInit {
-  books: Book[];
-
+  form: FormGroup;
+  books: any;
+  book: Book = new Book();
   constructor(
-    private bookService: BookService  
+    private bookService: BookService,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit() {
+    this.books = this.bookService.getBooks(),
+    this.form = this.formBuilder.group({
+      author: [null, [Validators.required, Validators.pattern("[a-zA-Z0-9_.-]*")]],
+      title: [null, [Validators.required, Validators.minLength(8)]],
+      src: [null, [Validators.required]],
+      date: [null, [Validators.required]],
+    });
   }
-  add(author: string,date: string, title: string, image: string): void {
-    author = author.trim();
-    title = title.trim();
-    image = image.trim();
-    if (!author || !date || !title || !image) { return; }
-    this.bookService.addBook({title} as Book)
+  add(): void {
+   console.log(this.form.value);
+   this.book = this.form.value;
+    this.bookService.addBook(this.book)
       .subscribe(book => {
-        this.books.push(book);
+        console.log(book)
+        this.books = this.bookService.getBooks(),
+        console.log(this.books)
       });
   }
 }

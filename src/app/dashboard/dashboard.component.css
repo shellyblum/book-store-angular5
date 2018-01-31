@@ -30,15 +30,15 @@
   .module {
     padding: 20px;
     text-align: center;
-    color: #E7E2BA;
+    font-weight: bold;
+    color: #4056A1;
     min-width: 120px;
-    /* background-color: #4056A1; */
     border-radius: 2px;
   }
   .module:hover {
     background-color: #C5CBE3;
     cursor: pointer;
-    color: #4056A1;
+    color: #F7882F;
   }
   .grid-pad {
     padding: 10px 0;

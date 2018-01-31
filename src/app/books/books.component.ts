@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from '../book';
+import { Book } from '../models/Book';
 import { BookService } from '../book.service';
 
 @Component({
@@ -20,8 +20,7 @@ export class BooksComponent implements OnInit {
     this.getBooks();
   }
   delete(book: Book): void {
-    let response = prompt('Are you sure you want to delete? Y/N');
-    if(response === 'n' || response === 'N') { 
+    if(!confirm("Are you sure?")) { 
       return; 
     }else{
       this.books = this.books.filter(b => b !== book);

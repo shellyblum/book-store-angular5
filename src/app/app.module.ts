@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BooksComponent } from './books/books.component';
 import { BookDetailComponent } from './book-detail/book-detail.component'; // <-- NgModel lives here
@@ -30,6 +30,7 @@ import { BookSearchComponent } from './book-search/book-search.component';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule ,
     ModalModule.forRoot(),
     AngularFontAwesomeModule,
     HttpClientModule,

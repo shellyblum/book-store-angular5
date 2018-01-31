@@ -1,4 +1,10 @@
+.container {
+    text-align: center;
+}
 img {
     width: 200px;
     height: 300px;
+}
+h2 {
+    color: #4056A1;
 }
