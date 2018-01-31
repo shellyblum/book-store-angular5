@@ -16,6 +16,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddBookComponent } from './add-book/add-book.component';
+import { BookSearchComponent } from './book-search/book-search.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AddBookComponent } from './add-book/add-book.component';
     BooksComponent,
     BookDetailComponent,
     DashboardComponent,
-    AddBookComponent
+    AddBookComponent,
+    BookSearchComponent
   ],
   imports: [
     BrowserModule,

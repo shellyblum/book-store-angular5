@@ -5,14 +5,15 @@ import { BooksComponent } from './books/books.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { BookDetailComponent }  from './book-detail/book-detail.component';
 import { AddBookComponent } from './add-book/add-book.component';
+import { BookSearchComponent } from './book-search/book-search.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'books', component: BooksComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: BookDetailComponent },
-  { path: 'add', component: AddBookComponent }
-  
+  { path: 'add', component: AddBookComponent },
+  { path: 'search', component: BookSearchComponent }  
 ];
 
 @NgModule({

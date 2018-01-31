@@ -56,21 +56,19 @@ export class BookService {
       catchError(this.handleError<Book>('addBook'))
     );
   }
-  // deleteBook (book: Book | number): Observable<Book> {
-  //   const id = typeof book === 'number' ? book : book.id;
-  //   const url = `${this.booksUrl}/${id}`;
-  //   const response = prompt('Are you sure you want to delete? Y/N');
-  //   if(response === 'y' || 'Y') {
-  //   return this.http.delete<Book>(url).pipe(
-  //     catchError(this.handleError<Book>('deleteBook'))
-  //   );
-  //   } 
-  // }
   deleteBook (book: Book | number): Observable<Book> {
     const id = typeof book === 'number' ? book : book.id;
     const url = `${this.booksUrl}/${id}`;
     return this.http.delete<Book>(url, httpOptions).pipe(
       catchError(this.handleError<Book>('deleteBook'))
+    );
+  }
+  searchBooks(term: string): Observable<Book[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+    return this.http.get<Book[]>(`api/books/?title=${term}`).pipe(
+      catchError(this.handleError<Book[]>('searchBooks', []))
     );
   }
 

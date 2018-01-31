@@ -20,6 +20,5 @@
   margin-bottom: 2em;
 }
 .card :hover {
-  /* background-color: #C5CBE3; */
   cursor: pointer;
 }
