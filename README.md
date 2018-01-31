@@ -6,4 +6,7 @@ ng serve
 
 ##go to: www.localhost:4200
 
+<<<<<<< HEAD
 ##Demoo for this project: 
+=======
+>>>>>>> 466f557d78b3b0fc5582f7cbd1c7ef7bc0b5150d
