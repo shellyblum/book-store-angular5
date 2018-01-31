@@ -30,16 +30,15 @@
   .module {
     padding: 20px;
     text-align: center;
-    color: #eee;
-    max-height: 120px;
+    color: #E7E2BA;
     min-width: 120px;
-    background-color: #607D8B;
+    /* background-color: #4056A1; */
     border-radius: 2px;
   }
   .module:hover {
-    background-color: #EEE;
+    background-color: #C5CBE3;
     cursor: pointer;
-    color: #607d8b;
+    color: #4056A1;
   }
   .grid-pad {
     padding: 10px 0;
@@ -66,4 +65,12 @@
   min-width: 120px;
   height: 300px;
   overflow: hidden;
+}
+h2{
+  color: #4056A1;
+  text-align: center; 
+  margin-bottom: 0;
+}
+ul {
+  list-style-type: none;
 }

@@ -1,9 +1,15 @@
-<h3>Top Books</h3>
+<h2>Top Books</h2>
 <div class="grid grid-pad">
-  <a *ngFor="let book of books" class="col-1-4" routerLink="/detail/{{book.id}}">
-    <div class="module book">
-      <h4>{{book.title}}</h4>
+  <ul class="books">
+    <div class="row">
+      <li *ngFor="let book of books" class="col-1-4" routerLink="/detail/{{book.id}}">
+        <div class="module book">
+          <img class="card-img-top" src='{{book.src}}' alt="Card image">
+          <h5 class="card-title">{{ book.title }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{book.author}}</h6>
+          <h6 class="card-subtitle mb-2 text-muted">{{ book.date }}</h6>
+        </div>
+      </li>
     </div>
-    <img src="{{book.src}}" alt="book image">
-  </a>
+  </ul>
 </div>
