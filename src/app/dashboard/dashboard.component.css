@@ -30,3 +30,6 @@ h2{
   color: #F7882F;
   border-radius: 10px;
 }
+.container {
+  margin: 0 auto;
+}
