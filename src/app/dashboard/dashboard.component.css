@@ -30,3 +30,6 @@ h2{
   color: rgb(14, 40, 126);
   border-radius: 10px;
 }
+.container {
+  margin: 0 auto;
+}
