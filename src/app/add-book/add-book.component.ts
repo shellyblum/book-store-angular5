@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../models/Book';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { BookService }  from '../book.service';
 
 @Component({
@@ -27,13 +27,10 @@ export class AddBookComponent implements OnInit {
     });
   }
   add(): void {
-   console.log(this.form.value);
    this.book = this.form.value;
     this.bookService.addBook(this.book)
       .subscribe(book => {
-        console.log(book)
-        this.books = this.bookService.getBooks(),
-        console.log(this.books)
+        this.books = this.bookService.getBooks()
       });
   }
 }

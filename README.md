@@ -4,8 +4,9 @@ If you don't have angular cli installed already, please install it first by runn
 
 # To run this project:
 * npm install
-* ng serve
+* ng serve 
 
 ## go to: www.localhost:4200
 
-## Demo for this project: https://shellyblum.github.io/book-store-angular5/
+# Or you can use the following command to serve and open in browser:
+* ng serve --open

@@ -9,9 +9,9 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 4, author: 'Simon Holmes', date: 'November 2015', title: 'Getting MEAN', src: 'https://images-na.ssl-images-amazon.com/images/I/51ZwZCpn5dL._SX392_BO1,204,203,200_.jpg' },
       { id: 5, author: 'Nathan Rozentals', date: 'April 2015', title: 'Mastering TypeScript', src: 'https://images-na.ssl-images-amazon.com/images/I/512hCH-UDoL._SX258_BO1,204,203,200_.jpg' },
       { id: 6, author: 'Matt Frisbie', date: '2017', title: 'Angular 2 Cookbook', src: 'https://images-na.ssl-images-amazon.com/images/I/51DtZXPd5BL._SX258_BO1,204,203,200_.jpg' },
-      { id: 7, author: 'Leslie Kaminoff, Amy Matthews ', date: '2014', title: 'Yoga Anatomy', src: 'http://www.humankinetics.com/AcuCustom/Sitename/DAM/128/9781492504290_dflt.jpg'},
-      { id: 8, author: 'Emily Blunt', date: 'October 2017', title: 'The Girl On The Train', src: 'https://1645110239.rsc.cdn77.org/image/f660x940/q80/mm/been/movies16108/posters/the-girl-on-the-train-1.20170225023010.jpg'},
-      { id: 9, author: 'Chloe Benjamin', date: 'September 2018', title: 'The Immortalists', src: 'https://prodimage.images-bn.com/pimages/9780735213180_p0_v4_s550x406.jpg'}
+      { id: 7, author: 'Addy Osmani', date: '2015', title: 'LEARNING JAVASCRIPT DESIGN PATTERNS', src: 'https://addyosmani.com/resources/essentialjsdesignpatterns/cover/cover.jpg'},
+      { id: 8, author: 'Marijn Haverbeke', date: 'December 4, 2018', title: 'Eloquent JavaScript', src: 'https://images-na.ssl-images-amazon.com/images/I/51I9naPg55L._SX376_BO1,204,203,200_.jpg'},
+      { id: 9, author: 'Garann Means', date: 'January 2012', title: 'Node for Front-End Developers', src: 'https://covers.oreillystatic.com/images/0636920023258/lrg.jpg'}
     ];
     return {books};
   }
